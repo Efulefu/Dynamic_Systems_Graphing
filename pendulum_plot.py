@@ -11,8 +11,15 @@ Y, X = np.mgrid[-w:w:25j, -w:w:25j]
 V = -np.sin(X) - 0.2 * Y # composante du vecteur résultant sur l'axe vertical
 # et U la composante position du vecteur de trajectoire
 U = Y # composante du vecteur résultant sur l'axe horizontal
+
+# calcul de la norme des vecteurs afin de les colorier selon
+# leur intensité
 speed = np.sqrt(U**2 + V**2)
 
+# On dessine 1 rangée et 2 colonnes de graphes, donc deux graphes
+# côte à côte. Si vous en rajoutez comprenez que axs est un tableau
+# des graphes à configurer. figsize permet de modifier la taille
+# des graphes à votre guise
 fig, axs = plt.subplots(1, 2, figsize=(15, 8))
 
 # Système pendule avec frottements
