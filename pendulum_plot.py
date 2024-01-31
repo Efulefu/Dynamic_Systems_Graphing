@@ -8,6 +8,8 @@ Y, X = np.mgrid[-w:w:25j, -w:w:25j]
 # Y est la vitesse angulaire, donc -0.2 * Y donne une force de frottement qui
 # agit toujours contre le mouvement
 # et donc V est la composante vitesse angulaire du vecteur de trajectoire du système
+# là on modélise la force conservative du poids (-sin(X)) et un frottement
+# d'un fluide (-K*Y)
 V = -np.sin(X) - 0.2 * Y # composante du vecteur résultant sur l'axe vertical
 # et U la composante position du vecteur de trajectoire
 U = Y # composante du vecteur résultant sur l'axe horizontal
